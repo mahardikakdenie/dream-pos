@@ -4,14 +4,14 @@
 			class="grid grid-cols-1 sm:grid-cols-4 gap-4 p-4 overflow-scroll h-[calc(100vh-80px)] relative">
 			<div class="sm:fixed top-20 sm:inline">
 				<div
-					class="w-full bg-white border-r flex sm:inline-block border-gray-200 rounded-lg p-4 shadow-sm overflow-y-auto no-scrollbar">
-					<ul class="space-y-3 flex sm:inline-block gap-3 overflow-y-scroll h-[20%]">
+					class="w-full bg-white border-r flex sm:inline-block border-gray-200 rounded-lg p-4 shadow-sm overflow-y-auto sm:h-[780px] no-scrollbar">
+					<ul class="space-y-3 flex sm:inline-block gap-3 overflow-y-scroll">
 						<li
 							v-for="(category, i) in categories"
 							:key="i"
 							@click="selectedCategory = category.name">
 							<div
-								class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer group"
+								class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-all px-4 duration-300 cursor-pointer group"
 								:class="[
 									{
 										'border-green-400 ':
