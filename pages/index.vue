@@ -51,8 +51,8 @@
 			</div>
 			<!-- Produk Content -->
 			<div
-				class="sm:col-span-3 col-span-1 sm:overflow-scroll pr-2 ml-2 sm:ml-36 sm:pb-20 pb-2">
-				<div class="flex flex-col sm:flex-row justify-between p-4">
+				class="sm:col-span-3 col-span-1 sm:overflow-scroll pr-2 ml-2 sm:ml-40 sm:pb-20 pb-2">
+				<div class="flex flex-col sm:flex-row justify-between px-10 py-2">
 					<div>
 						<div>
 							<span class="font-semibold">
