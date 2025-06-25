@@ -6,11 +6,21 @@
 				<div
 					class="w-full bg-white border-r flex sm:inline-block border-gray-200 rounded-lg p-4 shadow-sm h-full overflow-y-auto no-scrollbar">
 					<ul class="space-y-3 flex sm:inline-block gap-3">
-						<li v-for="(category, i) in categories" :key="i" @click="selectedCategory = category.name">
+						<li
+							v-for="(category, i) in categories"
+							:key="i"
+							@click="selectedCategory = category.name">
 							<div
-								class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer group" :class="[
-									{'border-green-400 ': selectedCategory === category.name},
-									{'border-gray-200': selectedCategory !== category.name},
+								class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer group"
+								:class="[
+									{
+										'border-green-400 ':
+											selectedCategory === category.name,
+									},
+									{
+										'border-gray-200':
+											selectedCategory !== category.name,
+									},
 								]">
 								<div class="p-3 flex flex-col items-center">
 									<img
@@ -18,10 +28,19 @@
 										alt=""
 										class="w-16 h-8 object-contain mb-1 rounded group-hover:scale-105 transition-transform duration-300" />
 									<span
-										class="text-xs text-center font-medium group-hover:text-blue-600 transition-colors text-ellipsis whitespace-nowrap" :class="[
-									{'text-green-700 ': selectedCategory === category.name},
-									{'text-gray-700': selectedCategory !== category.name},
-								]">
+										class="text-xs text-center font-medium group-hover:text-blue-600 transition-colors text-ellipsis whitespace-nowrap"
+										:class="[
+											{
+												'text-green-700 ':
+													selectedCategory ===
+													category.name,
+											},
+											{
+												'text-gray-700':
+													selectedCategory !==
+													category.name,
+											},
+										]">
 										{{ category.name }}
 									</span>
 								</div>
@@ -96,19 +115,47 @@
 							<span class="text-sm font-bold text-gray-500"
 								>$15800</span
 							>
-							<div class="flex items-center gap-1">
+							<div
+								class="flex items-center gap-1 bg-gray-100 rounded-full px-1 py-1 shadow-sm">
+								<!-- Tombol Minus -->
 								<button
-									class="w-6 h-6 flex items-center justify-center bg-gray-100 hover:bg-green-100 rounded-full text-gray-700 hover:text-green-700 transition">
-									-
+									class="w-7 h-7 cursor-pointer flex items-center justify-center bg-white rounded-full text-gray-600 hover:bg-green-100 hover:text-green-600 transition-all duration-200 focus:outline-none">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										class="h-4 w-4"
+										fill="none"
+										viewBox="0 0 24 24"
+										stroke="currentColor">
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											stroke-width="2"
+											d="M20 12H4" />
+									</svg>
 								</button>
+
+								<!-- Input Jumlah -->
 								<input
 									type="number"
 									value="0"
-									class="w-10 text-center border border-gray-300 rounded text-sm focus:ring-green-500"
+									class="w-8 h-7 text-center bg-transparent border-none text-sm font-medium text-gray-800 focus:outline-none focus:ring-0 flex items-center justify-center"
 									readonly />
+
+								<!-- Tombol Plus -->
 								<button
-									class="w-6 h-6 flex items-center justify-center bg-gray-100 hover:bg-green-100 rounded-full text-gray-700 hover:text-green-700 transition">
-									+
+									class="w-7 h-7 flex cursor-pointer items-center justify-center bg-white rounded-full text-gray-600 hover:bg-green-100 hover:text-green-600 transition-all duration-200 focus:outline-none">
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										class="h-4 w-4"
+										fill="none"
+										viewBox="0 0 24 24"
+										stroke="currentColor">
+										<path
+											stroke-linecap="round"
+											stroke-linejoin="round"
+											stroke-width="2"
+											d="M12 4v16m8-8H4" />
+									</svg>
 								</button>
 							</div>
 						</div>
