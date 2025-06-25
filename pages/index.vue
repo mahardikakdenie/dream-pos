@@ -1,20 +1,27 @@
 <template>
 	<div class="">
-		<div class="grid grid-cols-1 sm:grid-cols-4 gap-4 p-4 overflow-scroll  h-[calc(100vh-80px)] relative">
+		<div
+			class="grid grid-cols-1 sm:grid-cols-4 gap-4 p-4 overflow-scroll h-[calc(100vh-80px)] relative">
 			<div class="sm:fixed top-20 sm:inline">
 				<div
 					class="w-full bg-white border-r flex sm:inline-block border-gray-200 rounded-lg p-4 shadow-sm h-full overflow-y-auto no-scrollbar">
 					<ul class="space-y-3 flex sm:inline-block gap-3">
-						<li v-for="category in categories" :key="category.id">
+						<li v-for="(category, i) in categories" :key="i" @click="selectedCategory = category.name">
 							<div
-								class="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer group">
+								class="bg-white border rounded-lg shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer group" :class="[
+									{'border-green-400 ': selectedCategory === category.name},
+									{'border-gray-200': selectedCategory !== category.name},
+								]">
 								<div class="p-3 flex flex-col items-center">
 									<img
 										:src="category.image"
 										alt=""
 										class="w-16 h-8 object-contain mb-1 rounded group-hover:scale-105 transition-transform duration-300" />
 									<span
-										class="text-xs text-center font-medium text-gray-700 group-hover:text-blue-600 transition-colors text-ellipsis whitespace-nowrap">
+										class="text-xs text-center font-medium group-hover:text-blue-600 transition-colors text-ellipsis whitespace-nowrap" :class="[
+									{'text-green-700 ': selectedCategory === category.name},
+									{'text-gray-700': selectedCategory !== category.name},
+								]">
 										{{ category.name }}
 									</span>
 								</div>
@@ -24,13 +31,51 @@
 				</div>
 			</div>
 			<!-- Produk Content -->
-			<div class="sm:col-span-3 col-span-1 sm:overflow-scroll pr-2 ml-2 sm:ml-36 pb-16">
+			<div
+				class="sm:col-span-3 col-span-1 sm:overflow-scroll pr-2 ml-2 sm:ml-36 pb-20">
+				<div class="flex flex-col sm:flex-row justify-between p-4">
+					<div>
+						<div>
+							<span class="font-semibold">
+								Welcome, Wesley Adrian
+							</span>
+						</div>
+						<div>
+							<span class="text-gray-400"> 22 Maret 2025 </span>
+						</div>
+					</div>
+					<div>
+						<div class="relative max-w-xs w-full">
+							<input
+								id="search"
+								type="text"
+								placeholder="Search Products"
+								class="pl-9 py-2 w-full text-xs rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition duration-200" />
+							<label
+								for="search"
+								class="absolute inset-y-0 right-3 flex items-center pl-3 pointer-events-none text-gray-500">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									class="h-4 w-4"
+									fill="none"
+									viewBox="0 0 24 24"
+									stroke="currentColor">
+									<path
+										stroke-linecap="round"
+										stroke-linejoin="round"
+										stroke-width="2"
+										d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+								</svg>
+							</label>
+						</div>
+					</div>
+				</div>
 				<div
 					class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:overflow-scroll h-full sm:h-[calc(100vh - 50px)]">
 					<!-- Contoh produk -->
 					<div
-						v-for="product in 9"
-						:key="product"
+						v-for="(product, i) in 9"
+						:key="i"
 						class="border rounded-xl border-gray-300 bg-white p-4 shadow hover:shadow-lg transition-all duration-300">
 						<div
 							class="overflow-hidden rounded-xl bg-gray-100 mb-3 group">
@@ -73,7 +118,7 @@
 
 			<div class="col-span-1">
 				<div
-					class="bg-white shadow rounded-lg p-5 flex flex-col mb-24 sm:mb-0">
+					class="bg-white shadow rounded-lg p-5 flex flex-col mb-24 mt-10 sm:mt-0 sm:mb-0">
 					<h3 class="font-semibold text-gray-800">Order List</h3>
 					<hr class="my-4 border-gray-300" />
 
@@ -112,7 +157,13 @@
 </template>
 
 <script lang="ts" setup>
+const selectedCategory = ref<string>('All');
 const categories = [
+	{
+		id: 1,
+		name: 'All',
+		image: 'https://cdn-icons-png.freepik.com/512/4813/4813075.png',
+	},
 	{
 		id: 1,
 		name: 'Mobile',
