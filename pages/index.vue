@@ -4,7 +4,7 @@
 			class="grid grid-cols-1 sm:grid-cols-4 gap-4 p-4 overflow-scroll h-[calc(100vh-80px)] relative">
 			<div class="sm:fixed top-20 sm:inline">
 				<div
-					class="w-full bg-white border-r flex sm:inline-block border-gray-200 rounded-lg p-4 shadow-sm overflow-y-auto sm:h-[780px] no-scrollbar">
+					class="w-full bg-white border-r flex sm:inline-block border-gray-200 rounded-lg p-4 shadow-sm overflow-y-auto sm:h-[650px] no-scrollbar">
 					<ul class="space-y-3 flex sm:inline-block gap-3 overflow-y-scroll">
 						<li
 							v-for="(category, i) in categories"
@@ -218,38 +218,28 @@ const categories = [
 	},
 	{
 		id: 2,
-		name: 'Laptop',
-		image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-02.png',
-	},
-	{
-		id: 3,
-		name: 'Watch',
-		image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-03.png',
+		name: 'Headset',
+		image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-08.png',
 	},
 	{
 		id: 4,
 		name: 'Shoes',
-		image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-04.png',
+		image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-15.png'
 	},
 	{
 		id: 5,
-		name: 'Earphone',
-		image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-05.png',
+		name: 'Watches',
+		image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-03.png',
 	},
 	{
 		id: 6,
-		name: 'Casual Shoes',
-		image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-06.png',
+		name: 'Laptop',
+		image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-12.png',
 	},
 	{
 		id: 7,
-		name: 'Gaming Laptop',
-		image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-07.png',
-	},
-	{
-		id: 8,
-		name: 'Headset',
-		image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-08.png',
+		name: 'Appliance',
+		image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-05.png',
 	},
 ];
 
