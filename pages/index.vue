@@ -4,8 +4,8 @@
 			class="grid grid-cols-1 sm:grid-cols-4 gap-4 p-4 overflow-scroll h-[calc(100vh-80px)] relative">
 			<div class="sm:fixed top-20 sm:inline">
 				<div
-					class="w-full bg-white border-r flex sm:inline-block border-gray-200 rounded-lg p-4 shadow-sm h-full overflow-y-auto no-scrollbar">
-					<ul class="space-y-3 flex sm:inline-block gap-3">
+					class="w-full bg-white border-r flex sm:inline-block border-gray-200 rounded-lg p-4 shadow-sm overflow-y-auto no-scrollbar">
+					<ul class="space-y-3 flex sm:inline-block gap-3 overflow-y-scroll h-[20%]">
 						<li
 							v-for="(category, i) in categories"
 							:key="i"
@@ -90,24 +90,24 @@
 					</div>
 				</div>
 				<div
-					class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:overflow-scroll h-full sm:h-[calc(100vh - 50px)]">
+					class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:overflow-scroll sm:h-[calc(100vh - 50px)]">
 					<!-- Contoh produk -->
 					<div
-						v-for="(product, i) in 9"
+						v-for="(product, i) in products"
 						:key="i"
 						class="border rounded-xl border-gray-300 bg-white p-4 shadow hover:shadow-lg transition-all duration-300">
 						<div
 							class="overflow-hidden rounded-xl bg-gray-100 mb-3 group">
 							<img
-								src="https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-01.png"
+							    :src="product.image"
 								alt="Product"
-								class="w-full h-auto object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-105" />
+								class="w-full object-cover transform transition-transform duration-500 ease-in-out group-hover:scale-105" />
 						</div>
 						<div class="pt-1">
-							<span class="text-xs text-gray-500">Mobile</span>
+							<span class="text-xs text-gray-500">{{ product.type }}</span>
 							<h3
 								class="font-semibold text-gray-800 mt-1 text-sm">
-								IPhone 14 64GB
+								{{ product.name }}
 							</h3>
 						</div>
 						<hr class="border-gray-300 border-dashed my-2" />
@@ -252,6 +252,69 @@ const categories = [
 		image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-08.png',
 	},
 ];
+
+const products = ref([
+	{
+		name: 'Iphone 14 64 GB',
+		type: 'Mobiles',
+		image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-01.png'
+	},
+	{
+		name: 'Macbook Pro',
+		type: 'Computer',
+		image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-02.png'
+	},
+	{
+		name: 'Rolex Tribute V3',
+		type: 'Watches',
+		image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-03.png'
+	},
+	{
+		name: 'Red Nike Angelo',
+		type: 'Shoes',
+		image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-04.png'
+	},
+	{
+		name: 'Airpod 2',
+		type: 'Headphones',
+		image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-05.png'
+	},
+	{
+		name: 'Blue White OGR',
+		type: 'Shoes',
+		image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-06.png'
+	},
+	{
+		name: 'IdeaPad Slim 5 Gen 7',
+		type: 'Laptop',
+		image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-07.png'
+	},
+	{
+		name: 'SWAGME',
+		type: 'Headphones',
+		image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-08.png'
+	},
+	{
+		name: 'Timex Black Silver',
+		type: 'Watches',
+		image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-09.png'
+	},
+	{
+		name: 'Tablet 1.02 inch',
+		type: 'Computer',
+		image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-10.png'
+	},
+	{
+		name: 'Fossil Pair Of 3 in 1',
+		type: 'Watches',
+		image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-11.png'
+	},
+	{
+		name: 'Green Nike Fe',
+		type: 'Shoes',
+		image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-13.png'
+	},
+]);
 </script>
 
 <style scoped>
