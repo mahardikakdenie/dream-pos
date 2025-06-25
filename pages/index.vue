@@ -2,7 +2,7 @@
 	<div class="">
 		<div
 			class="grid grid-cols-1 sm:grid-cols-4 gap-4 p-4 overflow-scroll h-[calc(100vh-80px)] relative">
-			<Orders />
+			<CategoryList />
 			<ProductContent />
 
 			<div class="col-span-1">
