@@ -51,7 +51,7 @@
 			</div>
 			<!-- Produk Content -->
 			<div
-				class="sm:col-span-3 col-span-1 sm:overflow-scroll pr-2 ml-2 sm:ml-36 pb-20">
+				class="sm:col-span-3 col-span-1 sm:overflow-scroll pr-2 ml-2 sm:ml-36 sm:pb-20 pb-2">
 				<div class="flex flex-col sm:flex-row justify-between p-4">
 					<div>
 						<div>
@@ -90,7 +90,7 @@
 					</div>
 				</div>
 				<div
-					class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:overflow-scroll sm:h-[calc(100vh - 50px)]">
+					class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:overflow-scroll sm:h-[calc(100vh - 50px)] sm:ml-9 ml-0">
 					<!-- Contoh produk -->
 					<div
 						v-for="(product, i) in products"
@@ -165,7 +165,7 @@
 
 			<div class="col-span-1">
 				<div
-					class="bg-white shadow rounded-lg p-5 flex flex-col mb-24 mt-10 sm:mt-0 sm:mb-0">
+					class="bg-white shadow rounded-lg p-5 flex flex-col mb-24 mt-2 sm:mt-0 sm:mb-0">
 					<h3 class="font-semibold text-gray-800">Order List</h3>
 					<hr class="my-4 border-gray-300" />
 
