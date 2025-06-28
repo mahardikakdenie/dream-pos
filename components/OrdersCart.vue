@@ -1,21 +1,15 @@
 <template>
 	<div class="col-span-1">
-		<div
-			class="bg-white shadow-lg rounded-xl p-5 flex flex-col transition-all duration-300">
+		<div class="bg-white shadow-lg rounded-xl p-5 flex flex-col transition-all duration-300">
 			<!-- Header -->
 			<h3 class="font-bold text-gray-800 text-lg">Order List</h3>
 			<hr class="my-4 border-gray-200" />
 			<!-- Customer Input -->
 			<div class="mb-5">
-				<label
-					for="customer"
-					class="block text-xs font-medium text-gray-600 mb-2">
+				<label for="customer" class="block text-xs font-medium text-gray-600 mb-2">
 					Customer Name
 				</label>
-				<input
-					id="customer"
-					type="text"
-					placeholder="Enter customer name"
+				<input id="customer" type="text" placeholder="Enter customer name"
 					class="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 transition" />
 			</div>
 			<!-- Promo / Discount Section -->
@@ -23,13 +17,9 @@
 				<p class="text-xs font-semibold text-gray-600">
 					Apply Promo Code
 				</p>
-				<div
-					v-for="i in 3"
-					:key="i"
+				<div v-for="i in 3" :key="i"
 					class="border border-green-200 bg-green-50 rounded-lg px-3 py-2 flex justify-between items-center hover:bg-green-100 transition">
-					<span class="text-xs font-medium text-green-700"
-						>Discount 20%</span
-					>
+					<span class="text-xs font-medium text-green-700">Discount 20%</span>
 					<button
 						class="text-xs font-semibold text-white bg-green-600 hover:bg-green-500 px-3 py-1 rounded-md transition">
 						Apply
@@ -41,31 +31,21 @@
 				<div class="flex justify-between items-center mb-3">
 					<span class="font-semibold text-sm text-gray-700">
 						Order Details:
-						<span
-							class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full">
+						<span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full">
 							3 Items
 						</span>
 					</span>
-					<button
-						class="text-xs text-red-500 hover:text-red-700 font-medium">
+					<button class="text-xs text-red-500 hover:text-red-700 font-medium">
 						Clear All
 					</button>
 				</div>
 				<!-- Item List -->
-				<div
-					v-for="n in 3"
-					:key="n"
-					class="flex justify-between items-center py-2 border-b border-gray-100 last:border-0">
-					<span class="text-sm text-gray-800">iPhone 14 x1</span>
-					<span class="font-medium text-gray-900">$15800</span>
-				</div>
+				<CartList />
 			</div>
 			<!-- Total -->
 			<div class="border-t border-gray-200">
 				<div class="flex justify-between items-center">
-					<span class="text-base font-semibold text-gray-700"
-						>Total</span
-					>
+					<span class="text-base font-semibold text-gray-700">Total</span>
 					<span class="text-lg font-bold text-gray-900">$47400</span>
 				</div>
 				<!-- Checkout Button -->
@@ -77,4 +57,10 @@
 		</div>
 	</div>
 </template>
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const cartItems = [
+	{ id: 1, name: 'iPhone 14 x1', price: '$15,800', image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-01.png' },
+	{ id: 2, name: 'MacBook Pro x1', price: '$24,999', image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-01.png' },
+	{ id: 3, name: 'Apple Watch x1', price: '$799', image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-01.png' }
+];
+</script>

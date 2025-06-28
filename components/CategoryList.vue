@@ -48,7 +48,8 @@
 
 <script setup lang="ts">
 const selectedCategory = ref<string>('All');
-const categories = [
+import type { Category } from '../types/category_types.ts';
+const categories = ref<Category[]>([
 	{
 		id: 1,
 		name: 'All',
@@ -84,5 +85,5 @@ const categories = [
 		name: 'Appliance',
 		image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-05.png',
 	},
-];
+]);
 </script>
