@@ -27,15 +27,15 @@
 				</div>
 			</div>
 			<!-- Order Items -->
-			<div class="overflow-y-auto pr-2 no-scrollbar">
+			<div class="max-h-80 overflow-y-auto pr-2">
 				<div class="flex justify-between items-center mb-3">
 					<span class="font-semibold text-sm text-gray-700">
 						Order Details:
 						<span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full">
-							3 Items
+							{{ carts.length }} Items
 						</span>
 					</span>
-					<button class="text-xs text-red-500 hover:text-red-700 font-medium">
+					<button class="text-xs text-red-500 hover:text-red-700 font-medium cursor-pointer" @click="removeAll">
 						Clear All
 					</button>
 				</div>
@@ -43,10 +43,10 @@
 				<CartList />
 			</div>
 			<!-- Total -->
-			<div class="border-t border-gray-200">
+			<div class="border-t border-gray-200 py-2">
 				<div class="flex justify-between items-center">
 					<span class="text-base font-semibold text-gray-700">Total</span>
-					<span class="text-lg font-bold text-gray-900">$47400</span>
+					<span class="text-lg font-bold text-gray-900">{{ formatCurrency(useCart.total) }}</span>
 				</div>
 				<!-- Checkout Button -->
 				<button
@@ -58,9 +58,14 @@
 	</div>
 </template>
 <script lang="ts" setup>
-const cartItems = [
-	{ id: 1, name: 'iPhone 14 x1', price: '$15,800', image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-01.png' },
-	{ id: 2, name: 'MacBook Pro x1', price: '$24,999', image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-01.png' },
-	{ id: 3, name: 'Apple Watch x1', price: '$799', image: 'https://dreamspos.dreamstechnologies.com/html/template/assets/img/products/pos-product-01.png' }
-];
+import { useCartStore } from '~/store/useCart';
+
+const useCart = useCartStore();
+
+
+const carts = computed(() => useCart.items);
+
+const removeAll = () => {
+	useCart.items = [];
+}
 </script>

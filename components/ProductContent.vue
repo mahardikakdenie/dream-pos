@@ -42,9 +42,19 @@
                         formatCurrency(product.price)
                     }}</span>
                     <button @click="addToCart(product)"
-                        class="flex items-center gap-1 px-3 py-1.5 bg-white border border-slate-600 text-slate-700 rounded-xl shadow-sm text-xs font-semibold cursor-pointer transition-all duration-300 ease-in-out hover:bg-green-500 hover:text-white hover:shadow-md active:scale-95">
-                        <IconsPlusIcon class="w-3 h-3" />
-                        <span class="hidden sm:inline">Tambahkan</span>
+						:class="[
+							{
+								'bg-green-500 text-white': useCart.items.some((cart: any) => cart?.name === product.name)
+							},
+							{
+								'bg-white text-slate-700': !useCart.items.some((cart: any) => cart?.name === product.name)
+							}
+						]"
+						:disabled="useCart.items.some((cart: any) => cart?.name === product.name)"
+                        class="flex items-center gap-1 px-3 py-1.5 border border-slate-600 rounded-xl shadow-sm text-xs font-semibold cursor-pointer transition-all duration-300 ease-in-out hover:bg-green-500 hover:text-white hover:shadow-md active:scale-95 disabled:scale-95 disabled:bg-slate-200 disabled:border-slate-200 disabled:font-bold disabled:text-slate-600">
+                        <IconsPlusIcon v-if="!useCart.items.some((cart: any) => cart?.name === product.name)" class="w-3 h-3" />
+                        <IconsCheck v-if="useCart.items.some((cart: any) => cart?.name === product.name)" class="w-3 h-3" />
+                        <span class="hidden sm:inline">{{ useCart.items.some((cart: any) => cart?.name === product.name) ? 'Ditambahkan' : 'Tambahkan' }}</span>
                         <span class="sm:hidden">Add</span>
                     </button>
                 </div>
@@ -54,6 +64,9 @@
 </template>
 <script setup lang="ts">
 import { IconsSearchIcon } from '#components';
+import { useCartStore } from '~/store/useCart';
+
+const useCart = useCartStore();
 
 const products = ref([
 	{

@@ -10,12 +10,10 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
-  modules: [
-    // 'nuxt-sweetalert2'
-  ],
+  modules: ['@pinia/nuxt'],
   runtimeConfig:{
     public: {
       apiBaseUrl: process.env.VITE_API_BASE_URL || 'https://default-api-url.com', 
     }
-  }
+  },
 })

@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "@heroicons/vue": "^2.2.0",
+    "@pinia/nuxt": "^0.11.1",
     "@tailwindcss/vite": "^4.1.10",
     "nuxt": "^3.17.5",
     "nuxt-sweetalert2": "^1.0.0",
+    "pinia": "^3.0.3",
     "sweetalert2": "^11.22.0",
     "tailwindcss": "^4.1.10",
     "vue": "^3.5.16",

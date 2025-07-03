@@ -10,10 +10,15 @@
 </template>
 
 <script lang="ts" setup>
+import { useCartStore } from '~/store/useCart';
+const useCart = useCartStore();
+
 const carts = ref<any[]>([
 ]);
+
 const addToCart = (product: any) => {
 	carts.value.push(product);
+	useCart.addToCart(product);
 };
 </script>
 
